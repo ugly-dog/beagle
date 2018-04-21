@@ -5,11 +5,6 @@ public class puff {
         public void run() {
                     for (int i=0;i<30;i++){
                         System.out.println("runnable 1  for:"+i+"times!");
-                        try{
-                            Thread.sleep(50);
-                        }catch (InterruptedException e){
-                            e.printStackTrace();
-                        }
                     }
         }
     }
