@@ -14,7 +14,6 @@ public class puff {
            for (int i=0;i<30;i++){
                System.out.println("Thread 1 for:"+i+"times!");
 
-
            }
         }
     }
