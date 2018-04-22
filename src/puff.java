@@ -13,7 +13,9 @@ public class puff {
         public void run() {
            for (int i=0;i<30;i++){
                System.out.println("Thread 1 for:"+i+"times!");
-
+                if (i%2==0){
+                    OneThread.interrupted();
+                }
            }
         }
     }
