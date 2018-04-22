@@ -40,7 +40,12 @@ public void setAllocation(){
         }
     }
    for (int i=0;i<3;i++){
-
+        for (int j=0;j<3;j++){
+            Needs[i][j]=Max[i][j]-Allocation[i][j];
+        }
    }
 }
+    public  void printSystemVar(){
+
+    }
 }
