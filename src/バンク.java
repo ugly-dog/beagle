@@ -46,6 +46,8 @@ public void setAllocation(){
    }
 }
     public  void printSystemVar(){
+    System.out.println("Resource allocation as follow:");
+    System.out.println("Process"+"Max"+);
 
     }
 }
