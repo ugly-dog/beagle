@@ -47,7 +47,29 @@ public void setAllocation(){
 }
     public  void printSystemVar(){
     System.out.println("Resource allocation as follow:");
-    System.out.println("Process"+"Max"+);
+    System.out.println("Process"+"Max"+"  Allocation"+"    Needs"+"Available");
+    for (int i=0;i<3;i++){
+        System.out.print("P"+i+"   ");
+        for (int j=0;j<3;j++){
+            System.out.print(Max[i][j]+"   ");
+
+        }
+        System.out.print("|  ");
+        for(int j=0;j<3;j++){
+            System.out.print(Allocation[i][j]+"   ");
+        }
+        System.out.print("|  ");
+        for(int j=0;j<3;j++){
+            System.out.print(Needs[i][j]+"  ");
+        }
+        System.out.print("|   ");
+        if (i==0){
+            for (int j=0;j<3;j++){
+                System.out.print(Available[j]+"  ");
+            }
+        }
+        System.out.println();
+    }
 
     }
 }
