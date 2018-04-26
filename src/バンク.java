@@ -13,7 +13,7 @@ public void setSystemVar(){
     setMax();
     setAllocation();
     printSystemVar();
-    SecAlgorithm();
+    ほあん();
 }
 public void setMax(){
     System.out.println("Pls set the max need of Max");
@@ -118,6 +118,42 @@ public void setAllocation(){
            if (flag){
                System.out.println("Process  "+"  Work  "+"  Allocation  "+"  Need  "+"  Work+Allocation ");
                flag=false;
+           }
+           for (int i=0;i<3;i++){
+            if (Finish[i]==false&&Needs[i][0]<=Work[0]&&Needs[i][1]<=Work[1]&&Needs[i][2]<=Work[2]){
+                System.out.print("P"+i+"  ");
+                for (int k=0;k<3;k++){
+                    System.out.print(Work[k]+"  ");
+                }
+                System.out.print("|  ");
+                for (int j=0;j<3;j++){
+                    Work[j]+=Allocation[i][j];
+                }
+                Finish[i]=true;
+                S[count]=i;
+                count++;
+                for (int j=0;j<3;j++){
+                    System.out.print(Allocation[i][j]+"  ");
+                }
+                System.out.print("|  ");
+                for (int j=0;j<3;j++){
+                    System.out.print(Needs[i][j]+"  ");
+                }
+                System.out.print("|  ");
+                for (int j=0;j<3;j++){
+                    System.out.print(Work[j]+"  ");
+                }
+                System.out.println();
+            }
+           }
+           circle++;
+           if (count==3){
+               System.out.print("一ほあん存在する");
+               for (int i=0;i<3;i++){
+                   System.out.print("Process:"+" ");
+               }
+               System.out.println("Current Resource couldbe allocate");
+               break;
            }
         }
 
