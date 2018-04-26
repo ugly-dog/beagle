@@ -8,9 +8,9 @@ public class バンク動作 {
          バンク T=new  バンク();
          System.out.println("3つのプロセス数,初期リソース:{9,7,8}");
 
-         T.setSystemVar();
+         T.置くSystemVar();
          while (Choose==true){
-             T.setRequest();
+             T.置くアプライ();
              System.out.println("あなたはまだリソースを申請していますか？");
              C=in.nextLine();
              if (C.endsWith("n")){

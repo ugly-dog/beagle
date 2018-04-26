@@ -1,102 +1,102 @@
 import java.util.Scanner;
 
 public class バンク {
-    int[] Available={20,31,9};
-    int[][] Max=new int[3][3];
-    int[][] Allocation=new int[3][3];
-    int[][] Needs=new int[3][3];
-    int[][] Request=new int[3][3];
-    int [] Work=new int[3];
+    int[] 可用={20,31,9};
+    int[][] 最大=new int[3][3];
+    int[][] 割り当て=new int[3][3];
+    int[][] 必要=new int[3][3];
+    int[][] アプライ=new int[3][3];
+    int [] 作業=new int[3];
     int num=0;
     Scanner in=new Scanner(System.in);
-public void setSystemVar(){
-    setMax();
-    setAllocation();
+public void 置くSystemVar(){
+    置く最大();
+    置く割り当て();
     printSystemVar();
     ほあん();
 }
-public void setMax(){
-    System.out.println("Pls set the max need of Max");
+public void 置く最大(){
+    System.out.println("Pls 置く the 最大 need of 最大");
     for (int i=0;i<3;i++){
-        System.out.println("pls input amount of process :"+i);
+        System.out.println("pls input amount of プロセス :"+i);
         for (int j=0;j<3;j++){
-            Max[i][j]=in.nextInt();
+            最大[i][j]=in.nextInt();
         }
     }
 }
-public void setAllocation(){
-    System.out.println("pls set process matrix Allocation");
+public void 置く割り当て(){
+    System.out.println("pls 置く プロセス matrix 割り当て");
     for (int i=0;i<3;i++){
-        System.out.println("pls input amount of process :"+i);
+        System.out.println("pls input amount of プロセス :"+i);
         for (int j=0;j<3;j++){
-            Allocation[i][j]=in.nextInt();
+            割り当て[i][j]=in.nextInt();
         }
     }
-    System.out.println("Available=Available-Allocation");
-    System.out.println("Needs=Max-Allocation");
+    System.out.println("可用=可用-割り当て");
+    System.out.println("必要=最大-割り当て");
     for (int i=0;i<3;i++){
         for (int j=0;j<3;j++){
-            Available[i]=Available[i]-Allocation[j][i];
+            可用[i]=可用[i]-割り当て[j][i];
         }
     }
    for (int i=0;i<3;i++){
         for (int j=0;j<3;j++){
-            Needs[i][j]=Max[i][j]-Allocation[i][j];
+            必要[i][j]=最大[i][j]-割り当て[i][j];
         }
    }
 }
     public  void printSystemVar(){
-    System.out.println("Resource allocation as follow:");
-    System.out.println("Process     "+"      Max"+"     Allocation"+"    Needs"+"     Available");
+    System.out.println("Resource 割り当て as follow:");
+    System.out.println("プロセス     "+"      最大"+"     割り当て"+"    必要"+"     可用");
     for (int i=0;i<3;i++){
         System.out.print("P"+i+"   ");
         for (int j=0;j<3;j++){
-            System.out.print(Max[i][j]+"   ");
+            System.out.print(最大[i][j]+"   ");
 
         }
         System.out.print("|  ");
         for(int j=0;j<3;j++){
-            System.out.print(Allocation[i][j]+"   ");
+            System.out.print(割り当て[i][j]+"   ");
         }
         System.out.print("|  ");
         for(int j=0;j<3;j++){
-            System.out.print(Needs[i][j]+"  ");
+            System.out.print(必要[i][j]+"  ");
         }
         System.out.print("|   ");
         if (i==0){
             for (int j=0;j<3;j++){
-                System.out.print(Available[j]+"  ");
+                System.out.print(可用[j]+"  ");
             }
         }
         System.out.println();
     }
 
     }
-    public void setRequest(){
+    public void 置くアプライ(){
     System.out.println("pls input No. of Resoruce");
     num=in.nextInt();
-    System.out.println("pls input amount for per process");
+    System.out.println("pls input amount for per プロセス");
     for (int j=0;j<3;j++){
-        Request[num][j]=in.nextInt();
+        アプライ[num][j]=in.nextInt();
     }
-    System.out.println("Process "+num+" request resource:("+Request[num][0]+","+Request[num][1]+","+Request[num][2]+").");
+    System.out.println("プロセス "+num+" アプライ resource:("+アプライ[num][0]+","+アプライ[num][1]+","+アプライ[num][2]+").");
         进撃のアド達();
     }
     public void 进撃のアド達(){
     boolean T=true;
-    if (Request[num][0]<=Needs[num][0]&&Request[num][1]<=Needs[num][1]&&Request[num][2]<=Needs[num][2]){
-        if (Request[num][0]<=Available[0]&&Request[num][1]<=Available[1]&&Request[num][2]<=Available[2]){
+    if (アプライ[num][0]<=必要[num][0]&&アプライ[num][1]<=必要[num][1]&&アプライ[num][2]<=必要[num][2]){
+        if (アプライ[num][0]<=可用[0]&&アプライ[num][1]<=可用[1]&&アプライ[num][2]<=可用[2]){
             for (int i=0;i<3;i++){
-                Available[i]-=Request[num][i];
-                Allocation[num][i]+=Request[num][i];
-                Needs[num][i]-=Request[num][i];
+                可用[i]-=アプライ[num][i];
+                割り当て[num][i]+=アプライ[num][i];
+                必要[num][i]-=アプライ[num][i];
             }
         }else{
-            System.out.println("There is no enough Resource to allocate,Process:"+num+" need to waiting.");
+            System.out.println("There is no enough Resource to allocate,プロセス:"+num+" need to waiting.");
             T=false;
         }
     }else {
-        System.out.println("Process:"+num+" has request a exceed amount of nedds");
+        System.out.println("プロセス:"+num+" has アプライ a exceed amount of nedds");
         T=false;
     }
     if (T==true){
@@ -111,37 +111,37 @@ public void setAllocation(){
         int circle=0;
         int[] S=new int[3];
         for (int i=0;i<3;i++){
-            Work[i]=Available[i];
+            作業[i]=可用[i];
         }
         boolean flag=true;
         while (count<=3){
            if (flag){
-               System.out.println("Process  "+"  Work  "+"  Allocation  "+"  Need  "+"  Work+Allocation ");
+               System.out.println("プロセス  "+"  作業  "+"  割り当て  "+"  Need  "+"  作業+割り当て ");
                flag=false;
            }
            for (int i=0;i<3;i++){
-            if (Finish[i]==false&&Needs[i][0]<=Work[0]&&Needs[i][1]<=Work[1]&&Needs[i][2]<=Work[2]){
+            if (Finish[i]==false&&必要[i][0]<=作業[0]&&必要[i][1]<=作業[1]&&必要[i][2]<=作業[2]){
                 System.out.print("P"+i+"  ");
                 for (int k=0;k<3;k++){
-                    System.out.print(Work[k]+"  ");
+                    System.out.print(作業[k]+"  ");
                 }
                 System.out.print("|  ");
                 for (int j=0;j<3;j++){
-                    Work[j]+=Allocation[i][j];
+                    作業[j]+=割り当て[i][j];
                 }
                 Finish[i]=true;
                 S[count]=i;
                 count++;
                 for (int j=0;j<3;j++){
-                    System.out.print(Allocation[i][j]+"  ");
+                    System.out.print(割り当て[i][j]+"  ");
                 }
                 System.out.print("|  ");
                 for (int j=0;j<3;j++){
-                    System.out.print(Needs[i][j]+"  ");
+                    System.out.print(必要[i][j]+"  ");
                 }
                 System.out.print("|  ");
                 for (int j=0;j<3;j++){
-                    System.out.print(Work[j]+"  ");
+                    System.out.print(作業[j]+"  ");
                 }
                 System.out.println();
             }
@@ -150,9 +150,9 @@ public void setAllocation(){
            if (count==3){
                System.out.print("一ほあん存在する");
                for (int i=0;i<3;i++){
-                   System.out.print("Process:"+" ");
+                   System.out.print("プロセス:"+" ");
                }
-               System.out.println("Current Resource couldbe allocate");
+               System.out.println("Current Resource could be allocate");
                break;
            }
         }
