@@ -72,4 +72,54 @@ public void setAllocation(){
     }
 
     }
+    public void setRequest(){
+    System.out.println("pls input No. of Resoruce");
+    num=in.nextInt();
+    System.out.println("pls input amount for per process");
+    for (int j=0;j<3;j++){
+        Request[num][j]=in.nextInt();
+    }
+    System.out.println("Process "+num+" request resource:("+Request[num][0]+","+Request[num][1]+","+Request[num][2]+").");
+        进撃のアド達();
+    }
+    public void 进撃のアド達(){
+    boolean T=true;
+    if (Request[num][0]<=Needs[num][0]&&Request[num][1]<=Needs[num][1]&&Request[num][2]<=Needs[num][2]){
+        if (Request[num][0]<=Available[0]&&Request[num][1]<=Available[1]&&Request[num][2]<=Available[2]){
+            for (int i=0;i<3;i++){
+                Available[i]-=Request[num][i];
+                Allocation[num][i]+=Request[num][i];
+                Needs[num][i]-=Request[num][i];
+            }
+        }else{
+            System.out.println("There is no enough Resource to allocate,Process:"+num+" need to waiting.");
+            T=false;
+        }
+    }else {
+        System.out.println("Process:"+num+" has request a exceed amount of nedds");
+        T=false;
+    }
+    if (T==true){
+        printSystemVar();
+        System.out.println("now call ほあん");
+        ほあん();
+    }
+    }
+    public void ほあん(){
+        boolean[] Finish={false,false,false};
+        int count=0;
+        int circle=0;
+        int[] S=new int[3];
+        for (int i=0;i<3;i++){
+            Work[i]=Available[i];
+        }
+        boolean flag=true;
+        while (count<=3){
+           if (flag){
+               System.out.println("Process  "+"  Work  "+"  Allocation  "+"  Need  "+"  Work+Allocation ");
+               flag=false;
+           }
+        }
+
+    }
 }
