@@ -6,7 +6,7 @@ public class バンク {
     int[][] Allocation=new int[3][3];
     int[][] Needs=new int[3][3];
     int[][] Request=new int[3][3];
-    int [] Work=new int[3]
+    int [] Work=new int[3];
     int num=0;
     Scanner in=new Scanner(System.in);
 public void setSystemVar(){
@@ -47,7 +47,7 @@ public void setAllocation(){
 }
     public  void printSystemVar(){
     System.out.println("Resource allocation as follow:");
-    System.out.println("Process"+"Max"+"  Allocation"+"    Needs"+"Available");
+    System.out.println("Process     "+"      Max"+"     Allocation"+"    Needs"+"     Available");
     for (int i=0;i<3;i++){
         System.out.print("P"+i+"   ");
         for (int j=0;j<3;j++){
