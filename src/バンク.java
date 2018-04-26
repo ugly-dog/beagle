@@ -16,18 +16,18 @@ public void 置くSystemVar(){
     ほあん();
 }
 public void 置く最大(){
-    System.out.println("Pls 置く the 最大 need of 最大");
+    System.out.println("Pls 置く the 最大 必要 of 最大");
     for (int i=0;i<3;i++){
-        System.out.println("pls input amount of プロセス :"+i);
+        System.out.println("pls 入力 量 of プロセス :"+i);
         for (int j=0;j<3;j++){
             最大[i][j]=in.nextInt();
         }
     }
 }
 public void 置く割り当て(){
-    System.out.println("pls 置く プロセス matrix 割り当て");
+    System.out.println("pls 置く プロセス マトリックス 割り当て");
     for (int i=0;i<3;i++){
-        System.out.println("pls input amount of プロセス :"+i);
+        System.out.println("pls 入力 量 of プロセス :"+i);
         for (int j=0;j<3;j++){
             割り当て[i][j]=in.nextInt();
         }
@@ -73,9 +73,9 @@ public void 置く割り当て(){
 
     }
     public void 置くアプライ(){
-    System.out.println("pls input No. of Resoruce");
+    System.out.println("pls 入力 No. of Resoruce");
     num=in.nextInt();
-    System.out.println("pls input amount for per プロセス");
+    System.out.println("pls 入力 量 for per プロセス");
     for (int j=0;j<3;j++){
         アプライ[num][j]=in.nextInt();
     }
@@ -92,11 +92,11 @@ public void 置く割り当て(){
                 必要[num][i]-=アプライ[num][i];
             }
         }else{
-            System.out.println("There is no enough Resource to allocate,プロセス:"+num+" need to waiting.");
+            System.out.println("There is no enough Resource to allocate,プロセス:"+num+" 必要 to waiting.");
             T=false;
         }
     }else {
-        System.out.println("プロセス:"+num+" has アプライ a exceed amount of nedds");
+        System.out.println("プロセス:"+num+" has アプライ a exceed 量 of nedds");
         T=false;
     }
     if (T==true){
@@ -116,7 +116,7 @@ public void 置く割り当て(){
         boolean flag=true;
         while (count<=3){
            if (flag){
-               System.out.println("プロセス  "+"  作業  "+"  割り当て  "+"  Need  "+"  作業+割り当て ");
+               System.out.println("プロセス  "+"  作業  "+"  割り当て  "+"  必要  "+"  作業+割り当て ");
                flag=false;
            }
            for (int i=0;i<3;i++){
@@ -152,7 +152,7 @@ public void 置く割り当て(){
                for (int i=0;i<3;i++){
                    System.out.print("プロセス:"+" ");
                }
-               System.out.println("Current Resource could be allocate");
+               System.out.println("現在のリソースが不足している");
                break;
            }
         }
