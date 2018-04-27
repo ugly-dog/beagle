@@ -12,7 +12,7 @@ public class puff {
         @Override
         public void run() {
            for (int i=0;i<30;i++){
-               System.out.println("Thread 1 for:"+i+"times!");
+               System.out.println("スレッド 1 for:"+i+"times!");
                 if (i%2==0){
                     OneThread.interrupted();
                 }

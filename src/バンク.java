@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class バンク {
-    int[] 可用={20,31,9};
+    int[] 可用={20,31,50};
     int[][] 最大=new int[3][3];
     int[][] 割り当て=new int[3][3];
     int[][] 必要=new int[3][3];
