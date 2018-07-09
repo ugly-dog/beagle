@@ -7,6 +7,7 @@ public class puff {
                         System.out.println("runnable 1  for:"+i+"times!");
                     }
         }
+        h
     }
     class OneThread extends Thread {
         @Override
